@@ -3,6 +3,10 @@ FROM nvidia/cuda:10.2-cudnn7-runtime-ubuntu18.04
 
 # install python 3.6, pip and requirements for opencv-python 
 # (see https://github.com/NVIDIA/nvidia-docker/issues/864)
+
+RUN rm /etc/apt/sources.list.d/cuda.list
+RUN rm /etc/apt/sources.list.d/nvidia-ml.list
+
 RUN apt-get update && apt-get -y install \
     python3 \
     python3-pip \
